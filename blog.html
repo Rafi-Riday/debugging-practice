@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html data-theme="dracula" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Speed Monster | Blogs</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500&display=swap" rel="stylesheet" />
+    <!-- Style -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                // added custom device
+                screens: {
+                    'sm': '640px',
+                    'md': '768px',
+                    'lg': '1024px',
+                    '2lg': '1158px',
+                    'xl': '1280px',
+                    '2xl': '1536px',
+                },
+                extend: {
+                    colors: {
+                        tomato: '#ff4e55',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="flex flex-col min-h-screen justify-between">
+    <!-- header -->
+    <nav id="nav"></nav>
+
+    <!-- main body -->
+    <main class="mx-auto px-3 w-full xl:max-w-7xl grow py-5 md:py-8">
+        <section id="faq" class="w-full grid grid-cols-1 gap-5 md:gap-6 lg:gap-7">
+            <h1 class="text-xl md:text-3xl lg:text-5xl font-semibold text-center"><span class="bold green">Frequently
+                    Asked Questions</span></h1>
+            <div id="blog-container" class="grid grid-cols-1 gap-4 md:gap-5">
+                <!-- Question 1 -->
+                <div class="collapse collapse-arrow">
+                    <input type="checkbox" class="peer" />
+                    <div
+                        class="collapse-title text-dracula_color font-bold border-2 border-white rounded-lg rounded-b-none bg-[#fff0] peer-checked:bg-[#3b82f650]">
+                        Local Storage vs Session Storage
+                    </div>
+                    <div
+                        class="peer-checked:pt-2 collapse-content md:text-base border-2 border-white rounded-lg rounded-t-none">
+                        ▪ <span class="bold orange">Local Storage</span> can store around <span class="bold green">10
+                            mb</span>
+                        information, where the limit of <span class="bold red">Session Storage</span> is naturally <span
+                            class="bold green">5 mb</span>.
+                        <br>
+                        ▪ <span class="bold orange">Local Storage</span> can survive refresh, and restart. It is
+                        accessible
+                        from
+                        any window. But<span class="bold red">Session Storage</span> is accessible only from that tab of
+                        browser. It also can survive refresh, and restart.
+                        <br>
+                        ▪ <span class="bold orange">Local Storage</span> expires only when <span
+                            class="bold green">'localStorage.clear()'</span> method is
+                        called. <span class="bold red">Session Storage</span> also expires when <span
+                            class="bold green">'localStorage.clear()'</span> is
+                        called. Besides, it expires when the current tab/session of browser is closed.
+                    </div>
+                </div>
+                <!-- Question 2 -->
+                <div class="collapse collapse-arrow">
+                    <input type="checkbox" class="peer" />
+                    <div
+                        class="collapse-title text-dracula_color font-bold border-2 border-white rounded-lg rounded-b-none bg-[#fff0] peer-checked:bg-[#3b82f650]">
+                        Global Scope vs Block Scope
+                    </div>
+                    <div
+                        class="peer-checked:pt-2 collapse-content md:text-base border-2 border-white rounded-lg rounded-t-none">
+                        The main difference between <span class="bold red">Global Scope</span> and <span
+                            class="bold orange">Block Scope</span> is :
+                        <br>
+                        <br>
+                        ▪ <span class="bold red">Global Scope</span> id Accessed globally, when a variable is declared
+                        globally, is not in any
+                        function
+                        or block, it has a global scope. It can be accessed by any JavaScript program and function.
+                        <br>
+                        ▪ On the other hand, <span class="bold orange">Block Scope</span> can be accessed by only in
+                        self
+                        and child blocks. A function
+                        contains a block, any variable declared inside a function has Function Scope which acts just
+                        like the <span class="bold orange">Block Scope</span>. In a function or a block o codes, Block
+                        Scopes can't be accessed by
+                        outside the block, but can be accessed in any child block.
+                    </div>
+                </div>
+                <!-- Question 3 -->
+                <div class="collapse collapse-arrow">
+                    <input type="checkbox" class="peer" />
+                    <div
+                        class="collapse-title text-dracula_color font-bold border-2 border-white rounded-lg rounded-b-none bg-[#fff0] peer-checked:bg-[#3b82f650]">
+                        Javascript Event Loop
+                    </div>
+                    <div
+                        class="peer-checked:pt-2 collapse-content md:text-base border-2 border-white rounded-lg rounded-t-none">
+                        ▪ The <span class="bold green">event loop</span> is the secret behind JavaScript's <span
+                            class="bold red">asynchronous</span> programming. JS executes all
+                        operations on a <span class="bold orange">single thread</span>, but using a few smart data
+                        structures, it gives us the illusion
+                        of <span class="bold orange">multi-threading</span>.
+                        <br>
+                        ▪ The <span class="bold green">call stack</span> is responsible for keeping track of all the
+                        operations in line to be executed.
+                        Whenever a function is finished, it is popped from the stack.
+                        <br>
+                        ▪ The <span class="bold green">event queue</span> is responsible for sending new functions to
+                        the stack for processing. It
+                        follows the queue data structure to maintain the correct sequence in which all operations should
+                        be sent for execution.
+                        <br>
+                        ▪ Whenever an <span class="bold red">async</span> function is called, it is sent to a <span
+                            class="bold red">browser API</span>. These are APIs built into
+                        the browser. Based on the command received from the call stack, the API starts its own
+                        <span class="bold orange">single-threaded</span> operation.
+                    </div>
+                </div>
+                <!-- Question 4 -->
+                <div class="collapse collapse-arrow">
+                    <input type="checkbox" class="peer" />
+                    <div
+                        class="collapse-title text-dracula_color font-bold border-2 border-white rounded-lg rounded-b-none bg-[#fff0] peer-checked:bg-[#3b82f650]">
+                        How can we get 'undefined' in JavaScript?
+                    </div>
+                    <div
+                        class="peer-checked:pt-2 collapse-content md:text-base border-2 border-white rounded-lg rounded-t-none">
+                        ▪ <span class="bold orange">Setting a value</span> <span class="bold red">undefined</span>
+                        willingly.
+                        <br>
+                        ▪ <span class="bold orange">Variables</span> which are declared but not have been set a value,
+                        returns <span class="bold red">undefined</span>.
+                        <br>
+                        ▪ Function without a <span class="bold orange">return</span> or with a <span
+                            class="bold orange">return command</span> but with no <span class="bold orange">return
+                            value</span> will return <span class="bold red">undefined</span> by default.
+                        <br>
+                        ▪ <span class="bold orange">Parameters</span> that are not passed through a function will define
+                        that argument as <span class="bold red">undefined</span>.
+                        <br>
+                        ▪ While trying to access an array element, if index is <span class="bold orange">out of
+                            range</span>, <span class="bold red">undefined</span> is returned.
+                        <br>
+                        ▪ <span class="bold orange">Deleting</span> an array element from that array will create an
+                        <span class="bold red">undefined</span> value inside that array with that element index.
+                        <br>
+                        ▪ When <span class="bold orange">object value / property</span> is not found, it will return
+                        <span class="bold red">undefined</span>.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- scripts -->
+    <script src="js/navbar.js"></script>
+    <script>
+        navbar(0);
+    </script>
+</body>
+
+</html>
